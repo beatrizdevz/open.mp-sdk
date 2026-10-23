@@ -966,6 +966,15 @@ struct IPlayer : public IExtensible, public IEntity
 
 	/// Check if player is leaving spectator mode
 	virtual bool isLeavingSpectatorMode() const = 0;
+	
+    /// Check if the player connection reported the launcher client
+    virtual bool isUsingLauncher() const = 0;
+
+    /// Get the launcher version reported by the player connection
+    virtual StringView getLauncherVersion() const = 0;
+
+    /// Store the first valid launcher version reported by the player connection
+    virtual bool setLauncherVersion(StringView version) = 0;
 };
 
 /// Player spawn event handlers
